@@ -43,12 +43,12 @@ Parameters:
   PrivateSubnet1CIDR:
     Description: Enter the IP range (CIDR notation) for the private subnet 1
     Type: String
-    Default: 10.0.2.0/24
+    Default: 10.0.16.0/20
 
   PrivateSubnet2CIDR:
     Description: Enter the IP range (CIDR notation) for the private subnet 2
     Type: String
-    Default: 10.0.3.0/24
+    Default: 10.0.32.0/20
 
   SSHLocation:
     AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
@@ -223,4 +223,33 @@ Resources:
           Value: Database Security Group
       VpcId: !Ref VPC
 
-#Outputs:
+Outputs:
+  VPC:
+    Description: VPC ID
+    Export:
+      Name: !Sub ${AWS::StackName}-VPC
+    Value: !Ref  VPC
+
+  PublicSubnet1:
+    Description: Public Subnet 1 ID
+    Export:
+      Name: !Sub ${AWS::StackName}-PublicSubnet1
+    Value: !Ref PublicSubnet1
+
+  PublicSubnet2:
+    Description: Public Subnet 2 ID
+    Export:
+      Name: !Sub ${AWS::StackName}-PublicSubnet2
+    Value: !Ref PublicSubnet2
+
+  PrivateSubnet1:
+    Description: Private Subnet 1 ID
+    Export:
+      Name: !Sub ${AWS::StackName}-PrivateSubnet1
+    Value: !Ref PrivateSubnet1
+
+  PrivateSubnet2:
+  Description: Private Subnet 2 ID
+  Export:
+    Name: !Sub ${AWS::StackName}-PrivateSubnet2
+  Value: !Ref PrivateSubnet2
