@@ -2,7 +2,27 @@ AWSTemplateFormatVersion: 2010-09-09
 
 Description: This template creates a VPC with public and private subnets
 
-#Metadata:
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      -
+        Label:
+          default: "VPC CIDR"
+        Parameters:
+          - VpcCIDR
+      -
+        Label:
+          default: "Subnet CIDR"
+        Parameters:
+          - PublicSubnet1CIDR
+          - PublicSubnet2CIDR
+          - PrivateSubnet1CIDR
+          - PrivateSubnet2CIDR
+      -
+        Label:
+          default: "SSH CIDR"
+        Parameters:
+          - SSHLocation
 
 Parameters:
   VpcCIDR:
