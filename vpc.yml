@@ -249,7 +249,7 @@ Outputs:
     Value: !Ref PrivateSubnet1
 
   PrivateSubnet2:
-  Description: Private Subnet 2 ID
-  Export:
-    Name: !Sub ${AWS::StackName}-PrivateSubnet2
-  Value: !Ref PrivateSubnet2
+    Description: Private Subnet 2 ID
+    Export:
+      Name: !Sub ${AWS::StackName}-PrivateSubnet2
+    Value: !Ref PrivateSubnet2
