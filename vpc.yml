@@ -253,3 +253,21 @@ Outputs:
     Export:
       Name: !Sub ${AWS::StackName}-PrivateSubnet2
     Value: !Ref PrivateSubnet2
+
+  DatabaseSecurityGroup:
+    Description: Database Security Group
+    Export:
+      Name: !Sub ${AWS::StackName}-DatabaseSecurityGroup
+    Value: !Ref DatabaseSecurityGroup
+
+  ALBSecurityGroup:
+    Description: Application Load Balancer Security Group
+    Export:
+      Name: !Sub ${AWS::StackName}-ALBSecurityGroup
+    Value: !Ref ALBSecurityGroup
+
+  WebServerSecurityGroup:
+    Description: Web-Server Security Group
+    Export:
+      Name: !Sub ${AWS::StackName}-WebServerSecurityGroup
+    Value: !Ref WebServerSecurityGroup        
